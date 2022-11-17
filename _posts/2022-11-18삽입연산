@@ -1,0 +1,48 @@
+---
+layout: post
+author: Abhinav Saxena
+tags: [overview, moonwalk]
+---
+## 삽입 연선
+## 원형 연결리스트 
+
+이동연산
+```py
+moveAfter(self,a,x) # 노드a를 노드x 다음으로 이동
+=>splic(a,a,x)
+movebefore(self,a,x) # 노드a를 노드x 전으로 이동
+=>splic(a,a,x.prev)
+insertAfter(x,key)
+  moveAfter(Node(key),x)# 새로운 노드`key`를 생성하여 x 다음으로 이동한다
+insertBefore(x,key)
+  moveBefore(Node(key),x)# 새로운 노드`key`생성하여 x 전으로 이동한다
+
+pushFront(key)
+  inserAfter(self.head,key)# 노드`key`를 헤드노드 앞에 생성한다
+pushBack(key)
+  inserbefore(self.head,key)# 노드`key`를 테일 노드 뒤에 생성한다
+```
+```py
+## 삭제연산
+remove(x) # 노드 x를 삭제
+  if x== None or x == self.head: # 삭제할려고 할때 X 값이 없거나 ,헤드 노드일때에는 return 한다
+    return
+  x.prev.next = x.next # x.prev 링크와 x.next 링크를 서로 연결하는 구문이다
+  x.next.prev = x.prev
+  del x
+  
+ popFront # 헤드노드 앞에 있는 값을 삭제할때 사용된다
+ popBack  # 헤드노드 뒤에 있는 값을 삭제할때 사용된다
+  
+## 탐색연산 
+def search(self,key
+  v= self.head # dummy node
+  while v.next != self.head: # v가 리스트 한바퀴를 돌떄 까지 반복한다
+    if v.key == key:
+       return key
+    v= v.next
+  return None
+```
+
+  
+  
