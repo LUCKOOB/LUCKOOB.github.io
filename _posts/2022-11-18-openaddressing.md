@@ -21,3 +21,23 @@ claster : 비슷한 `key`값이 모여있는 단위, 클러스터 크면 삽입/
 set(key,value=None)
     1.key 값이 H에 있으면 vlaue를update
     2.`key` 값이 H에 없으면 (key,vlaue)를 insert
+```
+
+### SET,SEARCJ,REMOVE 연산 
+
+```py 
+find-solt(key):
+    i = f(key)
+    start= i 
+    while (H[i]==occupiede)and (H[i].key !=key)
+        i = (i+1)%m # 으로 나눈느 이유는 하바퀴 돌았을떄 다시 처음부터 시작할려고
+        if i == start : retrun Full
+        
+set(key,value= None):
+    i = find-solt(key)
+    if i == Full: return None #H를 키워야함
+    if H[i].is occupied:
+        H[i].value = value # H가 가즉찾지만 원하는 `value`가 있기 때문에 `H[i].value`값을 업데이트한다
+    else: #H도 비어있고 동일한 값이 안들어 있기 때문에 새로운 값을 입력한다
+    H[i].key,H[i].value= key,vlaue
+    return key
