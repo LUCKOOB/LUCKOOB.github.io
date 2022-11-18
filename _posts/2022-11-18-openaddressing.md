@@ -54,4 +54,21 @@ search(key)
 - `key`값이 있으면 `slot`번호 리턴
 - `kwy`값이 없다면 `key`값이 삽이되어 `solt`번호 리턴
 
-
+```py 
+remove(key):
+    i = find-slot(key)
+    if H[i] == unoccupied: return None
+    j = i   #H[i]: 빈 슬롯  H[j]: 이동해야하는 solt
+    while True:
+        H[i] = None
+        while True: # H[j] 찾기
+            j=(j+1)%m
+            if H[j] is unoccapied: retiurn key
+            k = f(H[j].key)
+            if not (i < k <= j or j < i < k or k <= j < i): break 
+       H[i] = h[j]
+       i=j
+```
+- 이동해야하는 `key` 값을 발견하면 j 위치에서 i로 위치를 복사한후 j위치에 있는 값을 삭제 한다
+- linear probing는 클러스터값이 많이 생기는데 도움이 된다 그래서 guardratic prbing,double hashing 을 사용한다
+- 클러스터를 많이 생기지 않게 할려면 `key`을 분산해서 `Hash`넣으면 된다
