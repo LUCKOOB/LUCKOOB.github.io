@@ -49,9 +49,9 @@ kry ---> index
 - f(key)= key % m(hash Table 사이즈)
 
 세가지 주요 요소
-1.Table : list
-2.Hash function 
-3.Collision resolution method (충돌이 일어 날때 어떻게 처리 할건지)
+- 1.Table : list
+- 2.Hash function 
+- 3.Collision resolution method (충돌이 일어 날때 어떻게 처리 할건지)
 
 
 H, (H) = m # m은 slots 개수
