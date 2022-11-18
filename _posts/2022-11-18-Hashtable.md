@@ -57,7 +57,7 @@ kry ---> index
 H, (H) = m # m은 slots 개수
 
 division hash function
-f(k) = (k%P(소수)%m #충돌이 많이 생긴다
+f(k) = (k%P(소수))%m #충돌이 많이 생긴다
 
 perfect hash function : ideal hash function 비현실적이다
 ```txt
